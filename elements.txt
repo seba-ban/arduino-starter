@@ -1,0 +1,42 @@
+StarterKit rozszerzony - z modułem Arduino Uno R4 WiFi + Box:
+1	Arduino Uno R4 WiFi	Arduino Uno R4 WiFi - oryginalny, najnowszy moduł z mikrokontrolerem Renesas RA4M1 oraz układem WiFi.
+2		Płytka stykowa 830 pól - duża płytka z osobnymi liniami zasilania umożliwiająca tworzenie układów elektronicznych.
+3	Zestaw diod LED 5 mm (30 szt.)	Zestaw diod LED 5 mm (30 szt.) - po 10 szt. czerwonych, zielonych i żółtych elementów.
+4		Dioda RGB wspólna anoda - LED z czterema wyprowadzeniami potrafiąca świecić we wszystkich kolorach.
+5		Zestaw rezystorów (200 szt.) - po 20 szt. najpopularniejszych wartości, umożliwiających np. podłączenie diod LED.
+6	Tranzystor NPN BC547 (5 szt.)	Tranzystory NPN BC547 (5 szt.) - układy półprzewodnikowe pozwalające m.in. sterować elementami, które pobierają większy prąd niż może dostarczyć pojedynczy pin mikrokontrolera.
+7	Czujnik temperatury cyfrowy DS18B20	Czujnik temperatury analogowy LM35 - popularny, prosty w obsłudze termometr, podłączany do wejść analogowych Arduino.
+8		Fotorezystor - czujnik umożliwiający pomiar natężenia padającego światła, pozwoli np. wykryć czy w pomieszczeniu jest ciemno czy jasno.
+9	Przyciski typu tact-switch	Przyciski typu tact-switch - posłużą jako element wprowadzający dane do modułu Arduino.
+10	Potencjometr 10k lub 20k	Potencjometr 10k lub 20k (5 szt.) - podobnie jak przyciski, podłączone do wyprowadzeń analogowych mogą służyć jako element interfejsu użytkownika - proste pokrętła.
+11	Rejestr przesuwny	Rejestr przesuwny - umożliwia np. sterowanie większą ilością diod oszczędzając przy tym wyprowadzenia cyfrowe Arduino.
+12	Ekspander PCF8574	Ekspander PCF8574 - pozwala zwiększyć liczbę wyprowadzeń Arduino.
+13		Buzzer z generatorem - zasilany napięciem 5 V prosty generator sygnałów dźwiękowych.
+14		Przewody połączeniowe 65 szt. męsko - męskie - umożliwiają tworzenie połączeń na płytce stykowej oraz pomiędzy płytką i Arduino.
+15		Przewód USB A-C dł. 1 m - służący do połączenia Arduino z komputerem.
+ 16	DHT11	DHT11 - czujnik umożliwiający pomiar temperatury oraz wilgotności powietrza.
+ 17	Wyświetlacz LCD dla Arduino ze złączami	Wyświetlacz LCD 16x2 z wlutowanymi złączami goldpin - z niebieskim podświetlaniem-  popularny wyświetlacz alfanumeryczny z dostępną biblioteką dla Arduino z przylutowanymi złączami goldpin. 
+ 18	Sterownik silników L293D	Sterownik silników L293D - mostek H umożliwiający sterowanie kierunkiem oraz prędkością obrotową dwóch silników prądu stałego.
+19	Czujnik ruchu PIR	Czujnik PIR - umożliwia wykrywanie ruchu.
+20	Czujnik odległości HC-SR04	Czujnik odległości HC-DR04 - czujnik ultradźwiękowy potrafiący wykrywać obiekty w odległości od 2 cm do 200 cm.
+21	DHT11	Silnik DC - niewielki, prosty silnik prądu stałego zasilany napięciem od 3 V do 5 V.
+22	Organizer ułatwiający przenoszenie zestawu	Organizer ułatwiający przenoszenie zestawu.
+
+Miernik uniwersalny Rebel RB-55
+Serwo MG-90S - micro - 180 stopni - metalowa przekładnia
+Uchwyt do serw micro Pan/Tilt z miejscem na kamerę - plastikowy
+Miernik pola elektromagnetycznego Benetech GM3120
+Przewody połączeniowe męsko-męskie justPi 10cm - 40szt.
+Przewody połączeniowe żeńsko-męskie justPi 10cm - 40szt.
+Kondensator ceramiczny 100nF/50V THT - 10szt.
+Kondensator elektrolityczny 1000uF/25V 10x17mm 105C THT - 5szt.
+Kondensator monolityczny 1uF/50V X7R - 10szt.
+Kondensator elektrolityczny 220uF/50V 10x12mm 105C THT - 10szt.
+Dławik osiowy przeciwzakłóceniowy 1mH/40mA - 10szt.
+Dławik osiowy przeciwzakłóceniowy 10uH/160mA - 10szt.
+Koło + silnik 65x26mm 5V z przekładnią 48:1 + przewody
+Klip na baterię 9V (6F22) z przewodem - 15cm
+Bateria 9V 4022 6LR61 alkaliczna Varta Industrial
+Stabilizator 5V L7805ABV - THT TO220
+Moduł RFID MF RC522 13,56MHz SPI + karta i brelok
+Serwo EF90D 360 - micro - praca ciągła - 360 stopni - z kołem i oponą
