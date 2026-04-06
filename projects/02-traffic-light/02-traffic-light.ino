@@ -29,9 +29,9 @@ void setup() {
 // A helper function to turn ALL lights off at once
 // We call this before turning on each new light
 void allOff() {
-  digitalWrite(RED_PIN, LOW);
-  digitalWrite(YELLOW_PIN, LOW);
-  digitalWrite(GREEN_PIN, LOW);
+  digitalWrite(RED_PIN, LOW);    // turn red OFF
+  digitalWrite(YELLOW_PIN, LOW); // turn yellow OFF
+  digitalWrite(GREEN_PIN, LOW);  // turn green OFF
 }
 
 // loop() runs over and over, forever
@@ -42,17 +42,17 @@ void loop() {
   delay(3000);                    // stay red for 3 seconds
 
   // --- YELLOW: get ready to go ---
-  allOff();
+  allOff();                       // turn everything off before switching
   digitalWrite(YELLOW_PIN, HIGH); // turn yellow ON
   delay(1000);                    // stay yellow for 1 second
 
   // --- GREEN: go! ---
-  allOff();
+  allOff();                       // turn everything off before switching
   digitalWrite(GREEN_PIN, HIGH);  // turn green ON
   delay(3000);                    // stay green for 3 seconds
 
   // --- YELLOW again: get ready to stop ---
-  allOff();
+  allOff();                       // turn everything off before switching
   digitalWrite(YELLOW_PIN, HIGH);
   delay(1000);                    // stay yellow for 1 second
 
