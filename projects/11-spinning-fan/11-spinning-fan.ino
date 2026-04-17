@@ -46,12 +46,15 @@
 bool goingForward = true;   // true = forward, false = reverse
 
 // Button debounce — we use millis() so the motor doesn't pause when pressed
-bool lastButtonState = HIGH;          // button unpressed reads HIGH (INPUT_PULLUP)
+bool lastButtonState = HIGH;          // raw reading from last loop
+bool lastStableButtonState = HIGH;    // confirmed stable state after debounce
 unsigned long lastDebounceTime = 0;   // when the button last changed
-const unsigned long DEBOUNCE_MS = 50; // ignore changes shorter than 50 milliseconds
+const unsigned long DEBOUNCE_MS = 50UL; // ignore changes shorter than 50 milliseconds
 
 // setup() runs once when the Arduino turns on
 void setup() {
+  Serial.begin(9600);  // start communication with the computer (first, so it is ready before anything else)
+
   pinMode(EN1_PIN, OUTPUT);  // speed control — PWM output to L293D enable
   pinMode(IN1_PIN, OUTPUT);  // direction signal A
   pinMode(IN2_PIN, OUTPUT);  // direction signal B
@@ -65,8 +68,6 @@ void setup() {
 
   // Start in forward direction
   setDirection(goingForward);
-
-  Serial.begin(9600);  // start communication with the computer
 }
 
 // loop() runs over and over, forever
@@ -85,27 +86,31 @@ void loop() {
   // --- Check button for direction toggle ---
   bool currentButtonState = digitalRead(BTN_PIN);
 
-  // Only act when the button state actually changes
+  // Record when the button state changes (start debounce window)
   if (currentButtonState != lastButtonState) {
-    lastDebounceTime = millis();  // record when the change happened
+    lastDebounceTime = millis();
   }
+  lastButtonState = currentButtonState;  // always update raw state
 
-  // Wait until the button has been stable for DEBOUNCE_MS milliseconds
-  if ((millis() - lastDebounceTime) > DEBOUNCE_MS) {
-    // Button just pressed (HIGH → LOW means finger pressed down)
-    if (currentButtonState == LOW && lastButtonState == HIGH) {
+  // After the button has been stable for DEBOUNCE_MS, check for a press
+  if ((millis() - lastDebounceTime) >= DEBOUNCE_MS) {
+    // Falling edge: button just pressed (HIGH → LOW)
+    if (currentButtonState == LOW && lastStableButtonState == HIGH) {
       goingForward = !goingForward;  // flip direction
       setDirection(goingForward);
     }
+    lastStableButtonState = currentButtonState;  // update stable state only after window
   }
 
-  lastButtonState = currentButtonState;  // remember for next loop
-
-  // --- Show info in Serial Monitor ---
-  Serial.print("Speed: ");
-  Serial.print(motorSpeed);
-  Serial.print("  Direction: ");
-  Serial.println(goingForward ? "FORWARD" : "REVERSE");
+  // --- Show info in Serial Monitor (at most every 200 ms) ---
+  static unsigned long lastPrint = 0;
+  if (millis() - lastPrint >= 200UL) {
+    lastPrint = millis();
+    Serial.print("Speed: ");
+    Serial.print(motorSpeed);
+    Serial.print("  Direction: ");
+    Serial.println(goingForward ? "FORWARD" : "REVERSE");
+  }
 }
 
 // setDirection() updates the L293D inputs and the indicator LEDs
